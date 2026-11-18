@@ -49,4 +49,11 @@ final class PhoneExtensionTest extends TestCase
             $this->assertMatchesRegularExpression('/^\+1 (\d{3} |\(\d{3}\) )[2-9]\d{2} \d{4}$/', $this->faker->spacedIndicatoredCellPhoneNumber());
         }
     }
+
+    public function testIndicatoredPhoneNumberHasNoParentheses(): void
+    {
+        for ($i = 0; $i < 100; $i++) {
+            $this->assertMatchesRegularExpression('/^\+1 [2-9]\d{2} [2-9]\d{2} \d{4}$/', $this->faker->spacedIndicatoredPhoneNumber());
+        }
+    }
 }
