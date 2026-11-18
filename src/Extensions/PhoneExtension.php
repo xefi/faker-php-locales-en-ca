@@ -51,6 +51,7 @@ class PhoneExtension extends BasePhoneExtension
 
         if ($prefix === $this->indicator) {
             $prefix .= $separator;
+            $format = str_replace('({area}) ', '{area}{separator}', $format);
         }
 
         $format = str_replace(
